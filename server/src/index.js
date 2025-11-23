@@ -1,17 +1,19 @@
-// src/index.js
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 
 import menuRoutes from "./routes/menuRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";   // 👈 nombre correcto del archivo
+import orderRoutes from "./routes/orderRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
-import tablesRoutes from "./routes/tablesRoutes.js"; // 👈 nuevo
-import healthRoutes from "./routes/healthRoutes.js"; // 👈 lo vamos a crear
+import tablesRoutes from "./routes/tablesRoutes.js";
+import healthRoutes from "./routes/healthRoutes.js";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Middlewares
+// Permitir JSON
 app.use(cors());
 app.use(express.json());
 
@@ -22,9 +24,9 @@ app.use("/orders", orderRoutes);
 app.use("/bookings", bookingRoutes);
 app.use("/tables", tablesRoutes);
 
-// Arrancar servidor
-app.listen(PORT, () => {
-  console.log(`🔥 API corriendo en http://localhost:${PORT}`);
+// 🔥 IMPORTANTE PARA DEPLOY EN RAILWAY 🔥
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🔥 API corriendo en http://0.0.0.0:${PORT}`);
 });
 
 export default app;

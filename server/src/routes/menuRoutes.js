@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { db, deleteImageFromStorage } from "../../firebaseAdmin.js";
+import { db } from "../../firebaseAdmin.js"; // ← corregido: quitamos deleteImageFromStorage
 
 const router = Router();
 
@@ -62,7 +62,7 @@ router.patch("/:id", async (req, res) => {
 });
 
 /* ============================================================
-   DELETE /menu/:id  → 🔥 Eliminar platillo + imagen
+   DELETE /menu/:id  → 🔥 Eliminar platillo (solo Firestore por ahora)
    ============================================================ */
 router.delete("/:id", async (req, res) => {
   try {
@@ -77,12 +77,13 @@ router.delete("/:id", async (req, res) => {
 
     const data = snap.data();
 
-    // 🔥 1. Eliminar imagen del bucket si existe
+    // ⚠️ Antes eliminábamos la imagen. Eso ya no existe.
+    // Ahora solo dejamos un aviso para no romper nada.
     if (data.imagen) {
-      await deleteImageFromStorage(data.imagen);
+      console.log("⚠️ Imagen pendiente por eliminar manualmente:", data.imagen);
     }
 
-    // 🔥 2. Eliminar documento Firestore
+    // Eliminar documento Firestore
     await docRef.delete();
 
     res.send({ id, deleted: true });

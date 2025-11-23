@@ -1,5 +1,11 @@
 node_modules
-# Keep environment variables out of version control
+# Variables de entorno
 .env
 
-/generated/prisma
+# Prisma generado (si lo usas)
+generated/prisma
+
+# 🔥 NO subir credenciales de Firebase
+keys/
+keys/*.json
+los-mas-chiludos-firebase-adminsdk*.json
