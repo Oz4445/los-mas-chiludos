@@ -1,0 +1,127 @@
+/* === CONTENEDOR GENERAL === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid #ffcb00;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* === TITULOS === */
+.card strong {
+  color: #111;
+}
+
+.card small {
+  color: #555;
+}
+
+/* === BOTONES === */
+.btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #d60000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn:hover {
+  background: #ff1e1e;
+  transform: scale(1.03);
+}
+
+.btn-outline {
+  border: 2px solid #d60000;
+  background: transparent;
+  color: #d60000;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background: #d60000;
+  color: #fff;
+}
+
+/* === ETIQUETAS DE ESTADO === */
+.status-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 8px;
+  border: 1px solid #ddd;
+  text-transform: capitalize;
+}
+
+.status-pendiente {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-recibida {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.status-en-preparacion {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-lista {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-entregada {
+  background: #ede7f6;
+  color: #4527a0;
+}
+
+.status-cancelada {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* === LISTAS === */
+ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+ul li {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+/* === TARJETAS VACÍAS === */
+.card-empty {
+  grid-column: 1 / -1;
+  background: #fff8ed;
+  border: 2px dashed #ffcb00;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+}
+.card-empty a {
+  color: #d60000;
+  font-weight: 700;
+}

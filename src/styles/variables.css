@@ -1,0 +1,10 @@
+:root{
+  --brand:#F3A21A;      /* naranja logo */
+  --accent:#E53935;     /* rojo chile */
+  --bg:#FFF8EE;
+  --text:#1A1A1A;
+  --surface:#FFFFFF;
+  --border:#EDEDED;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}

@@ -1,0 +1,154 @@
+.reservas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta base */
+.reserva-card {
+  border: 2px solid #ffcb00;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reserva-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Cabecera */
+.reserva-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f5e4a0;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.reserva-nombre {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #d60000;
+}
+
+.reserva-info {
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+  opacity: 0.8;
+}
+
+/* Píldora de estado */
+.estado-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  border: 1px solid #ddd;
+}
+
+/* Colores de estado */
+.estado-pendiente {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.estado-confirmada {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.estado-cancelada {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Cuerpo */
+.reserva-body p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Pie de acciones */
+.reserva-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Botones */
+.btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #d60000;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #ff1e1e;
+}
+
+.btn-outline {
+  border: 2px solid #d60000;
+  background: transparent;
+  color: #d60000;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: #d60000;
+  color: #fff;
+}
+
+/* ======================== */
+/*        TABS ADMIN        */
+/* ======================== */
+.tabs-admin {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid #d60000;
+}
+
+.tab-btn.active {
+  background: #d60000;
+  color: white;
+}
+
+.tab-btn.inactive {
+  background: white;
+  color: #d60000;
+}
+
+.tab-btn.inactive:hover {
+  background: #ffe2e2;
+  color: #a00000;
+}
+

@@ -1,0 +1,126 @@
+/* ==========
+   THEME CHILUDOS
+   Colores base + fondo con “sensación” de restaurante
+   ========== */
+:root{
+  --chiludos-red: #d60000;
+  --chiludos-red-2: #ff1e1e;
+  --chiludos-yellow: #ffcb00;
+  --bg-cream: #fff8ed;
+  --ink: #222;
+  --muted: #6b7280;
+  --card: #fff;
+  --radius: 16px;
+  --shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+*{ box-sizing: border-box; }
+
+html, body, #root{ height:100%; }
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 100% -200px, rgba(214,0,0,.06), transparent 60%),
+    linear-gradient(#fff, #fff8ed 78%);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+}
+
+/* Layout base */
+.site-main{
+  min-height: calc(100vh - 160px); /* respeta tu cálculo original */
+  padding: 28px 0 34px;
+}
+.site-main.is-home{
+  padding-top: 18px;
+}
+
+/* Contenedor responsivo */
+.container{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+/* Tarjetas (coherente con lo que ya usas) */
+.card{
+  background: var(--card);
+  border: 2px solid var(--chiludos-yellow);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Botones */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  background: var(--chiludos-red);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(214,0,0,.28);
+  transition: transform .08s ease, background .2s ease, box-shadow .2s ease;
+}
+.btn:hover{ background: var(--chiludos-red-2); transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+
+.btn.btn-outline{
+  background: transparent;
+  color: var(--chiludos-red);
+  border: 2px solid var(--chiludos-red);
+  box-shadow: none;
+}
+.btn.btn-outline:hover{
+  background: var(--chiludos-red);
+  color:#fff;
+}
+
+/* Píldoras de estado */
+.muted{ color: var(--muted); }
+
+/* Grids suaves reutilizables */
+.grid{
+  display:grid;
+  gap:16px;
+}
+
+/* ==== Fondo decorativo “chiles” sutil (no bloquea clics) ==== */
+.bg-chiles{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(600px 300px at 10% -180px, rgba(255,203,0,.20), transparent 60%),
+    radial-gradient(500px 280px at 110% 20%, rgba(214,0,0,.10), transparent 60%);
+  animation: bgFloat 18s ease-in-out infinite alternate;
+  filter: saturate(1.02);
+}
+@keyframes bgFloat{
+  0%   { transform: translateY(0px); }
+  100% { transform: translateY(12px); }
+}
+
+/* Enlaces rápidos del dashboard (hover bonito) */
+.quicklink{
+  color: var(--chiludos-red);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 4px;
+  border-radius: 8px;
+  transition: color .2s ease, background .2s ease, transform .08s ease;
+}
+.quicklink:hover{
+  color:#a50000;
+  background: rgba(255,203,0,.22);
+  transform: translateX(2px);
+}
+
+/* Títulos de sección reutilizables (si los quieres) */
+.section-title{
+  margin: 0 0 12px;
+  color: var(--chiludos-red);
+  font-weight: 900;
+}

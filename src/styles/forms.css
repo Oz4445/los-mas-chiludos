@@ -1,0 +1,109 @@
+.form-page {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  background: #fff8ed;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 550px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 34px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ffcb00;
+}
+
+.form-title {
+  margin: 0;
+  color: #d60000;
+  font-weight: 800;
+  text-align: center;
+  font-size: 26px;
+}
+
+.form-subtitle {
+  text-align: center;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.form-body label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+.form-body input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 6px 0 14px;
+  font-size: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-msg {
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff6d0;
+  color: #444;
+  font-weight: 600;
+}
+
+/* Botones */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #d60000;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(214, 0, 0, 0.3);
+  transition: background 0.2s ease;
+}
+.btn:hover {
+  background: #ff1e1e;
+}
+
+.btn-outline {
+  border: 2px solid #d60000;
+  background: transparent;
+  color: #d60000;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background: #d60000;
+  color: #fff;
+}
+
+/* Tabla de platillos */
+.order-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.order-total {
+  text-align: right;
+  font-weight: 800;
+  font-size: 18px;
+  margin-top: 10px;
+}
