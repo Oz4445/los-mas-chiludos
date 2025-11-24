@@ -1,11 +1,10 @@
-// src/pages/cliente/Reservas.jsx
 import { useState } from "react";
 import { createBooking } from "../../data/api";
 import { useAuth } from "../../context/AuthContext";
 import "../../styles/forms.css";
 
 export default function Reservas() {
-  const { user } = useAuth(); // 👈 Usuario logueado
+  const { user } = useAuth();
 
   const [form, setForm] = useState({
     nombreCliente: "",
@@ -13,7 +12,7 @@ export default function Reservas() {
     hora: "",
     personas: 2,
     telefono: "",
-    tipo: "mesa", // ⭐ AGREGADO — requerido por el backend
+    tipo: "mesa",
   });
 
   const [loading, setLoading] = useState(false);
@@ -37,17 +36,11 @@ export default function Reservas() {
 
     setLoading(true);
     try {
-      // ⭐ CORREGIDO: enviar userId y tipo (backend los requiere)
-      const payload = {
-        ...form,
-        userId: user.uid,
-      };
+      const payload = { ...form, userId: user.uid };
+      await createBooking(payload);
 
-      const resp = await createBooking(payload);
+      setMsg("✅ Reserva creada correctamente 🎉");
 
-      setMsg(`✅ Reserva creada correctamente. ID: ${resp.id}`);
-
-      // Limpiar el form
       setForm({
         nombreCliente: "",
         fecha: "",
@@ -112,7 +105,6 @@ export default function Reservas() {
             onChange={(e) => set("telefono", e.target.value)}
           />
 
-          {/* CAMPO TIPO (puede ocultarse si no quieres mostrarlo) */}
           <input type="hidden" value={form.tipo} />
 
           {msg && <div className="form-msg">{msg}</div>}
