@@ -1,0 +1,38 @@
+/* BOTÓN HAMBURGUESA */
+.nav-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* NAV DESKTOP */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
