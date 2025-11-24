@@ -62,15 +62,17 @@ export default function Ordenar() {
       cliente,
       items,
       total,
-      userId: user.uid,   // 🔥🔥🔥 CORREGIDO (antes era user.id)
+      userId: user.uid,
       createdAt: new Date().toISOString(),
       estado: "recibida",
     };
 
     setLoading(true);
     try {
-      const resp = await createOrder(payload);
-      setMsg(`✅ Pedido creado con éxito. ID: ${resp.id}`);
+      await createOrder(payload);
+      setMsg("✅ Pedido creado con éxito 🎉");
+
+      // Limpiar
       setCliente("");
       setItems([{ nombre: "", cantidad: 1, precio: 0 }]);
     } catch (err) {
